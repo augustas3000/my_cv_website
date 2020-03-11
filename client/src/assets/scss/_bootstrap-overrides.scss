@@ -1,0 +1,25 @@
+.bg-primary {
+  background-color: #222222 !important;
+}
+
+.text-primary {
+  color: #68EEC4 !important;
+  // $primary
+}
+
+a {
+  color: #68EEC4;
+  &:hover,
+  &:focus,
+  &:active {
+    color: darken(#68EEC4, 15%);
+  }
+}
+
+
+@media (min-width: 992px) {
+  .bg-primary {
+    background-color: #fff !important;
+  }
+
+}
