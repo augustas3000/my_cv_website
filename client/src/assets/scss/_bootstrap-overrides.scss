@@ -19,7 +19,10 @@ a {
 
 @media (min-width: 992px) {
   .bg-primary {
-    background-color: #fff !important;
+    background-color: none !important;
+    width: 10rem !important;
+    padding: 0;
+    // width: 20rem;
   }
 
 }

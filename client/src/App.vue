@@ -6,6 +6,9 @@
 <template>
   <div id="app">
 
+    <header class="header">
+
+    </header>
 
     <Navigation :name="name" />
 

@@ -29,25 +29,26 @@
   #sideNav {
     text-align: center;
     position: fixed;
-    top: 0;
-    left: 0;
+    top: 22vh;
+    left: 4vh;
     // background-color: green;
+    // background-color: transparent;
 
     display: flex;
     flex-direction: column;
-
+    // width: 10vh;
     width: $sidebar-base-width;
-    height: 100vh;
+    // height: 50vh;
     .navbar-brand {
       display: flex;
 
       margin: auto auto 0;
       padding: 0.5rem;
-      .img-profile {
-        max-width: 10rem;
-        max-height: 10rem;
-        border: 0.5rem solid fade-out($white, 0.8);
-      }
+      // .img-profile {
+      //   max-width: 10rem;
+      //   max-height: 10rem;
+      //   border: 0.5rem solid fade-out($white, 0.8);
+      // }
     }
     .navbar-collapse {
       display: flex;
