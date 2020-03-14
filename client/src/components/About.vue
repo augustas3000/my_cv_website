@@ -16,7 +16,12 @@
       </div>
       <p
         class="lead mb-5"
-      >Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      >Hello. My name is Augustas - a fresh programmer with aptitude and determination. I come from forestry and natural resource management background. My love for coding proliferated through the use of modern mapping and data management technologies to support my daily work as a forest manager.
+
+      About two years ago I wrote my first VBA script to automate repetitive Excel tasks important to my role at a time. The rush I got from seeing the code doing almost-exactly what I instructed it to do, very soon made coding my favourite hobby. In my free time I studied VBA for Excel, and Python for mapping software (QGIS, ArcGIS), later became interested in web-GIS and web development technologies.
+
+      A year ago, I took a strategic approach to becoming a solid developer. I signed up for a Professional Software Development Bootcamp with CodeClan-Glasgow, and created a home study plan for myself in preparation for the big course, which I have now completed.
+      </p>
       <div class="social-icons">
         <a :href="social.url" v-for="(social, index) in socialList" :key="index">
           <font-awesome-icon :icon="['fab', social.icon]"></font-awesome-icon>

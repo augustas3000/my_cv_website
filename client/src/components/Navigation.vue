@@ -2,7 +2,10 @@
 
   <!-- navigation element -->
   <!-- toggleable="lg" becomes toggleable at large or below -->
-  <b-navbar toggleable="lg" type="dark" class="bg-primary fixed-top" id="sideNav">
+  <!-- hide -->
+<!-- v-bind:class="{hide: handleScroll}" -->
+<!-- v-on:scroll="handleScroll" -->
+  <b-navbar toggleable="lg" type="dark"   class="bg-primary  fixed-top" id="sideNav">
 
 
     <b-navbar-brand to="#app">
@@ -41,6 +44,12 @@
 </template>
 
 <script>
+// AppNav.vue
+// import WindowInstanceMap from '../WindowInstanceMap.js'
+
+
+
+
 export default {
   name: "Navigation",
   props: {
@@ -48,6 +57,8 @@ export default {
   },
   data() {
     return {
+      // scrolled: false,
+
       navigationList: [
         {
           title: "About",
@@ -78,7 +89,48 @@ export default {
   },
 
   methods: {
+  //  handleScroll: function(evt, el) {
+  //   if (window.scrollY > 730) {
+  //     el.setAttribute("style", "opacity: 1; transform: translate3d(0, -10px, 0)")
+  //   }
+  //   return window.scrollY > 100;
+  //   }
+  // }
 
-  }
+}
+  ,
+  mounted() {
+
+
+  //
+  //   checkY() {
+  //   window.addEventListener('scroll', this.handleScroll);
+  // }
+  // }
+
+
+  // destroyed () {
+  //   window.removeEventListener('scroll', this.handleScroll);
+  // }
+}
 };
 </script>
+
+
+<!--
+data () {
+  return {
+    scrolled: false
+  };
+},
+methods: {
+  handleScroll () {
+    this.scrolled = window.scrollY > 0;
+  }
+},
+created () {
+  window.addEventListener('scroll', this.handleScroll);
+},
+destroyed () {
+  window.removeEventListener('scroll', this.handleScroll);
+} -->

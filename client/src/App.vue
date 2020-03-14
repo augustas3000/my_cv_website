@@ -6,11 +6,9 @@
 <template>
   <div id="app">
 
-    <header class="header">
+    <Header />
 
-    </header>
-
-    <Navigation :name="name" />
+    <Navigation :class="{ 'hide': hideNavbar }"  :name="name" />
 
     <!-- p-0 for padding -->
     <!-- Use <b-container> for a responsive pixel width or <b-container fluid> for width: 100% across all viewport and device sizes. -->
@@ -34,6 +32,7 @@
 </template>
 
 <script>
+import { eventBus } from "./main.js"
 import smoothScroll from 'smooth-scroll';
 
 import About from "@/components/About";
@@ -44,6 +43,7 @@ import Projects from "@/components/Projects";
 import Awards from "@/components/Awards";
 import Navigation from "@/components/Navigation";
 import Border from "@/components/Border";
+import Header from "@/components/Header"
 
 export default {
   name: "app",
@@ -52,7 +52,8 @@ export default {
       name: {
         first: "Augustas",
         last: "Juskevicius"
-      }
+      },
+      hideNavbar: true
     }
   },
   components: {
@@ -63,12 +64,44 @@ export default {
     Projects,
     Awards,
     Navigation,
-    Border
+    Border,
+    Header
   },
   created: function() {
     var scroll = new smoothScroll('a[href*="#"]', {
       updateURL: false
     })
+  },
+  methods: {
+   //  handleScroll: function(evt, el) {
+   //   if (window.scrollY > 50) {
+   //     el.setAttribute("style", "opacity: 1; transform: translate3d(0, -10px, 0)")
+   //   }
+   //   return window.scrollY > 100;
+   //   }
+       onScroll () {
+        if (window.pageYOffset > 720) {
+          this.hideNavbar = false
+        } else {
+          this.hideNavbar = true
+        }
+
+      }
+
+   },
+   mounted () {
+    // this.lastScrollPosition = window.pageYOffset
+    window.addEventListener('scroll', this.onScroll)
+    // const viewportMeta = document.createElement('meta')
+    // viewportMeta.name = 'viewport'
+    // viewportMeta.content = 'width=device-width, initial-scale=1'
+    // document.head.appendChild(viewportMeta)
+  },
+
+  beforeDestroy () {
+    window.removeEventListener('scroll', this.onScroll)
   }
+
+
 };
 </script>
